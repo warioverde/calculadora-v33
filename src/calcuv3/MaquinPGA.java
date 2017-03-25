@@ -15,8 +15,9 @@ public class MaquinPGA {
     
     int promedio [];
     int horas[];
+    int horasA;
     int asignaturas;
-    int peso[];
+    float peso[];
     
     Scanner leer = new Scanner(System.in);
     int leerDatos(){
@@ -35,24 +36,25 @@ public class MaquinPGA {
                 this.promedio[i]= leerDatos();
             }
    }
-    public int CHoras(){//arreglo de horas del estudiante
+    public void CHoras(){//arreglo de horas del estudiante
         this.horas = new int[this.asignaturas];
-        int Acumulador=0;
+        this.horasA=0;
         for (int i = 0; i < asignaturas; i++) {
-            System.out.println("ingrese horas semanales de la asignatura "+i+1);
+            System.out.println("ingrese horas semanales de la asignatura "+(i+1));
             this.horas[i]=leerDatos();
             
-            Acumulador= horas[i]+Acumulador;
+            this.horasA= horas[i]+this.horasA;
         }
-        return Acumulador;
+        
     }
     
     public void CalculaPeso(){
         
        Calculadora MiCalcu = new Calculadora();
-        this.peso= new int [this.asignaturas];
+        this.peso= new float [this.asignaturas];
         for (int i = 0; i < asignaturas; i++) {
-            this.peso[i]=MiCalcu.dividir(horas[i],CHoras());
+            
+            this.peso[i]=MiCalcu.dividir(horas[i],this.horasA);
             
             
         }
@@ -60,12 +62,12 @@ public class MaquinPGA {
             
         }
         
-    public float CalcularPGA(){
+    public void CalcularPGA(){
         float PGA =0;
         for (int i = 0; i < asignaturas; i++) {
              PGA = peso[i]* promedio[i] + PGA; 
         }
-    return PGA ;
+        System.out.println(PGA);
 }
     }    
     

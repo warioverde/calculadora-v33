@@ -1,3 +1,4 @@
+package calcuv3;
 
 public class Calculadora {
         
@@ -11,8 +12,8 @@ public class Calculadora {
         public  int multiplicar(int num1 , int num2){
              return num1*num2;
          }
-        public  int dividir(int num1 , int num2){
-             return num1/num2;
+        public  float dividir(int num1 , int num2){
+             return (float)num1/num2;
          }
         public void mostrar(){
              System.out.println(dividir(1,1));

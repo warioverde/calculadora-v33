@@ -16,6 +16,7 @@ public class TestPGA {
         MaquinPGA TestMPGA = new MaquinPGA();
         TestMPGA.CArreglo();
         TestMPGA.ArregloH();
+        TestMPGA.CHoras();
         TestMPGA.CalculaPeso();
         TestMPGA.CalcularPGA();
     }
