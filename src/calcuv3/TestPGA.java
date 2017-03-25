@@ -10,9 +10,10 @@ package calcuv3;
  * @author CORE 7
  */
 public class TestPGA {
-MaquinPGA TestMPGA = new MaquinPGA();
+
   
     public static void main(String[] args) {
+        MaquinPGA TestMPGA = new MaquinPGA();
         TestMPGA.CArreglo();
         TestMPGA.ArregloH();
         TestMPGA.CalculaPeso();
