@@ -10,12 +10,13 @@ package calcuv3;
  * @author CORE 7
  */
 public class TestPGA {
-
-    /**
-     * @param args the command line arguments
-     */
+MaquinPGA TestMPGA = new MaquinPGA();
+  
     public static void main(String[] args) {
-        // TODO code application logic here
+        TestMPGA.CArreglo();
+        TestMPGA.ArregloH();
+        TestMPGA.CalculaPeso();
+        TestMPGA.CalcularPGA();
     }
     
 }
