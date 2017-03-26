@@ -13,35 +13,46 @@ import java.util.Scanner;
  */
 public class MaquinPGA {
     
-    int promedio [];
+    float promedio [];
     int horas[];
     int horasA;
     int asignaturas;
     float peso[];
     
     Scanner leer = new Scanner(System.in);
-    int leerDatos(){
-    return leer.nextInt();
+    Float leerDatos(){
+    return leer.nextFloat();
 }
     public int CArreglo(){//cantidad de asignaturas inscritas
+        this.asignaturas=-1;
+            while (this.asignaturas <0 || this.asignaturas>7){
             System.out.println("ingrese cantidad de asignaturas");
-            this.asignaturas=leerDatos();
-            this.promedio = new int[this.asignaturas];
+                
+                this.asignaturas=leer.nextInt();
+            }
+            this.promedio = new float[this.asignaturas];
             return asignaturas;
 }
     public void ArregloH(){//llenado de matriz
         
        for (int i = 0; i < asignaturas; i++) {
+                while (promedio[i] < 1 || promedio[i]> 7 ){
                 System.out.println("ingrese promedio de la asignatura "+(i+1));
                 this.promedio[i]= leerDatos();
+                }
             }
    }
     public void CHoras(){//arreglo de horas del estudiante
+        
         this.horas = new int[this.asignaturas];
+        
         this.horasA=0;
         for (int i = 0; i < asignaturas; i++) {
+            
+           //while (this.horas[i]<0 || this.horas[i]>168){ no logra validar esto.
             System.out.println("ingrese horas semanales de la asignatura "+(i+1));
-            this.horas[i]=leerDatos();
+            this.horas[i]=leer.nextInt();
+           //}
             
             this.horasA= horas[i]+this.horasA;
         }
@@ -67,7 +78,7 @@ public class MaquinPGA {
         for (int i = 0; i < asignaturas; i++) {
              PGA = peso[i]* promedio[i] + PGA; 
         }
-        System.out.println(PGA);
+        System.out.println("tu PGA es de "+PGA);
 }
     }    
     
