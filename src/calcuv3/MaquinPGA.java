@@ -49,10 +49,10 @@ public class MaquinPGA {
         this.horasA=0;
         for (int i = 0; i < asignaturas; i++) {
             
-           //while (this.horas[i]<0 || this.horas[i]>168){ no logra validar esto.
+           while (this.horas[i]>=0 || this.horas[i]<168){
             System.out.println("ingrese horas semanales de la asignatura "+(i+1));
             this.horas[i]=leer.nextInt();
-           //}
+           }
             
             this.horasA= horas[i]+this.horasA;
         }
